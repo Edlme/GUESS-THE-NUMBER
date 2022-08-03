@@ -1,12 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guess Number</title>
 </head>
 <body>
+	<script>
+        // Returns a random integer from 1 to 100:
+        let num = Math.floor(Math.random() * 100) + 1;        
+        let guess = prompt("guess a number between 1 and 100");
+        let gotIt = false;
+        let numGuesses = 0;
+        let trial= "guesses!";
+
+        while(gotIt === false){
+            numGuesses++;
+            if(num == guess)
+            {
+                if(numGuesses = 1){
+                    trial = "guess!";
+                }else{
+                    trial= "guesses!";
+                }
+                //alert("Got it!");
+                gotIt = true; // break out of loop
+            }else{//continue, since answer is incorrect!
+                
+                if(num > guess){//higher!
+                    guess = prompt("higher!");                   
+
+                }else{//lower!
+                    guess = prompt("lower!");
+
+                }             
+                
+                
+                //guess = prompt("guess again!");  
+            }           
     
+        } 
+        alert("Congratulations! You guessed the correct number, which was " + num + " and it took you " + numGuesses +" "+ trial);
+        //alert("Sorry!  You guessed " + guess + " and the number was " + num);
+
+	</script>
 </body>
 </html>
+
